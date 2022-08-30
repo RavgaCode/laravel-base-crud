@@ -7,11 +7,14 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
-    <ul>
-        <li><a href="{{route('home')}}">Home</a></li>
-        <li><a href="{{route('comics')}}">Lista Fumetti</a></li>
-    </ul>
+    <header>
+        <ul>
+            <li><a href="{{route('home')}}">Home</a></li>
+            <li><a href="{{route('comics.index')}}">Lista Fumetti</a></li>
+        </ul>
+    </header>
+    
+    
     <main>
         @yield('main_content')
     </main>
