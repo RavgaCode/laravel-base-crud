@@ -11,6 +11,7 @@
         <ul>
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('comics.index')}}">Lista Fumetti</a></li>
+            <li><a href="{{route('comics.create')}}">Aggiungi Fumetto</a></li>
         </ul>
     </header>
     
