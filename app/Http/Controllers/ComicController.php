@@ -40,7 +40,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Faccio la validazione dei dati richiamando il metodo con le specifiche impostate
+        $request->validate($this->getValidationRules());
+
+
         $form_data = $request->all();
 
         $new_comic = new Comic();
@@ -99,5 +103,17 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+    // Metodo che contiene la funzione con tutti i parametri per la validazione dei form
+    protected function getValidationRules() {
+        return [
+            'src' => 'required|max:60000',
+            'title' => 'required|max:50',
+            'type' => 'required|max:30',
+            'series' => 'required|max:50',
+            'sale_date' => 'required',
+            'price'=> 'required',
+            'description' => 'max:60000'
+        ];
     }
 }
